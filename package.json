@@ -8,6 +8,7 @@
     "node-fetch": "^2.6.1",
     "uuid": "^3.4.0",
     "xml2js": "^0.4.23"
+    "apsystems": "^0.0.2",
   },
   "devDependencies": {
     "homey": "^2.9.0"
