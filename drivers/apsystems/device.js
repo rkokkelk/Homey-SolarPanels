@@ -20,18 +20,18 @@ class APsystemsECUR extends Inverter {
 
             // Handle error
             if (err ) {
-                this.log(`Unavailable (${error})`);
-                this.setUnavailable(`Error retrieving data (${error})`);
+                self.log(`Unavailable (${error})`);
+                self.setUnavailable(`Error retrieving data (${error})`);
 
                 return;
             }
 
             // Verify availability
-            if (!this.getAvailable()) {
-                this.setAvailable().then(_ => {
-                    this.log('Available');
+            if (!self.getAvailable()) {
+                self.setAvailable().then(_ => {
+                    self.log('Available');
                 }).catch(error => {
-                    this.error('Setting availability failed');
+                    self.error('Setting availability failed');
                 })
             }
 
