@@ -11,7 +11,9 @@
     "build": "tsc"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "apsystems": "^0.0.2",
+    "source-map-support": "^0.5.20"
   },
   "devDependencies": {
     "@tsconfig/node16": "^16.1.1",
