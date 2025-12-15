@@ -3,8 +3,11 @@
     "en": "SolarEdge",
     "nl": "SolarEdge"
   },
+<<<<<<< HEAD
   "connectivity": ["cloud"],
   "platforms": ["local"],
+=======
+>>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7
   "pair": [
     {
       "id": "pair"
@@ -22,14 +25,27 @@
     }
   ],
   "images": {
+<<<<<<< HEAD
     "large": "./drivers/solaredge/assets/images/large.jpg",
     "small": "./drivers/solaredge/assets/images/small.jpg"
   },
+=======
+    "large": "{{driverAssetsPath}}/images/large.jpg",
+    "small": "{{driverAssetsPath}}/images/small.jpg"
+  },
+  "connectivity": ["cloud"],
+  "platforms": ["local", "cloud"],
+>>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7
   "class": "solarpanel",
   "capabilities": [
     "measure_power",
     "meter_power",
+<<<<<<< HEAD
     "measure_temperature"
+=======
+    "measure_temperature",
+    "meter_power.total"
+>>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7
   ],
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -37,6 +53,7 @@
         "en": "Inverter temperature",
         "nl": "Temperatuur omvormer"
       }
+<<<<<<< HEAD
     }
   },
   "settings": [
@@ -49,3 +66,50 @@
     }
   ]
 }
+=======
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy yield (today)",
+        "nl": "Energieproductie (vandaag)"
+      }
+    },
+    "meter_power.consumption": {
+      "title": {
+        "en": "Energy usage (today)",
+        "nl": "Energieverbruik (vandaag)"
+      }
+    },
+    "meter_power.total": {
+      "title": {
+        "en": "Energy yield (total)",
+        "nl": "Energieproductie (totaal)"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power (production)",
+        "nl": "Vermogen (productie)"
+      }
+    },
+    "measure_voltage.ac": {
+      "title": {
+        "en": "Voltage (AC side)",
+        "nl": "Spanning (AC-zijde)"
+      }
+    },
+    "measure_voltage.dc": {
+      "title": {
+        "en": "Voltage (DC side)",
+        "nl": "Spanning (DC-zijde)"
+      }
+    },
+    "measure_power.consumption": {
+      "title": {
+        "en": "Power (consumption)",
+        "nl": "Vermogen (gebruik)"
+      }
+    }
+  }
+}
+>>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7

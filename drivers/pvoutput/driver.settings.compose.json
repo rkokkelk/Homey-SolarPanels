@@ -1,0 +1,78 @@
+[
+  {
+    "type": "group",
+    "label": { "en": "PVOutput login details" },
+    "children": [
+      {
+        "id": "key",
+        "type": "password",
+        "label": {
+          "en": "Read-only API key"
+        }
+      }
+    ]
+  },
+  {
+    "id": "interval",
+    "type": "number",
+    "label": { "en": "Check interval", "nl": "Controle-interval" },
+    "hint": {
+      "en": "Increase this value if you are using other apps that use the PvOutput API. Decrease this value if you are in PVOutput Donation mode.",
+      "nl": "Verhoog deze waarde als je andere apps gebruikt die de PVOutput API gebruiken. Verlaag deze waarde als je aan PVOutput doneert."
+    },
+    "value": 5,
+    "min": 1,
+    "units": { "en": "minutes", "nl": "minuten" }
+  },
+  {
+    "type": "group",
+    "label": { "en": "Advanced settings" },
+    "hint": {
+      "en": "If you are a PVOutput donator and use extended fields, set them up here."
+    },
+    "children": [
+      {
+        "id": "useExtendedFields",
+        "type": "checkbox",
+        "value": false,
+        "label": { "en": "Use PVOutput extended fields" }
+      },
+      {
+        "id": "batteryPercentageField",
+        "type": "dropdown",
+        "value": "-1",
+        "label": { "en": "Field ID for battery percentage" },
+        "values": [
+          {
+            "id": "-1",
+            "label": { "en": "-" }
+          },
+          {
+            "id": "7",
+            "label": { "en": "Field 7" }
+          },
+          {
+            "id": "8",
+            "label": { "en": "Field 8" }
+          },
+          {
+            "id": "9",
+            "label": { "en": "Field 9" }
+          },
+          {
+            "id": "10",
+            "label": { "en": "Field 10" }
+          },
+          {
+            "id": "11",
+            "label": { "en": "Field 11" }
+          },
+          {
+            "id": "12",
+            "label": { "en": "Field 12" }
+          }
+        ]
+      }
+    ]
+  }
+]

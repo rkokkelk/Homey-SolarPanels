@@ -1,0 +1,65 @@
+{
+  "name": {
+    "en": "Enphase IQ Gateway"
+  },
+  "class": "solarpanel",
+  "capabilities": [
+    "measure_power",
+    "measure_power.consumption",
+    "measure_power.grid",
+    "meter_power"
+  ],
+  "connectivity": ["lan"],
+  "platforms": ["local"],
+  "discovery": "enphase-envoy",
+  "pair": [
+    {
+      "id": "login_credentials",
+      "template": "login_credentials",
+      "options": {
+        "logo": "pair.svg"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.jpg",
+    "large": "{{driverAssetsPath}}/images/large.jpg"
+  },
+  "capabilitiesOptions": {
+    "meter_power": {
+      "title": {
+        "en": "Daily energy yield",
+        "nl": "Energie-opwek vandaag"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power (production)",
+        "nl": "Vermogen (productie)"
+      }
+    },
+    "measure_power.consumption": {
+      "title": {
+        "en": "Power (self-consumption)",
+        "nl": "Vermogen (eigengebruik)"
+      }
+    },
+    "measure_power.grid": {
+      "title": {
+        "en": "Power (grid)",
+        "nl": "Vermogen (net-afname)"
+      }
+    }
+  }
+}

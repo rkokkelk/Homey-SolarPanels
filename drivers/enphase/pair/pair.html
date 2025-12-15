@@ -1,4 +1,5 @@
 <style type="text/css">
+<<<<<<< HEAD
 	.form-group, .input-field {
 		display: flex;
 		flex-direction: column;
@@ -45,3 +46,83 @@
 		});
 	});
 </script>
+=======
+  .homey-solarpanels-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .homey-solarpanels-submit-button {
+    margin-top: auto;
+  }
+
+  .homey-solarpanels-help {
+    display: flex;
+    align-items: center;
+
+    color: var(--homey-color-text-light);
+  }
+
+  .homey-solarpanels-help > svg {
+    width: 1.25em;
+    height: 1.25em;
+
+    fill: var(--homey-color-text-light);
+
+    margin-right: 0.5em;
+  }
+</style>
+
+<form class="homey-form homey-solarpanels-form" onsubmit="onConnect(event)">
+  <h1 class="homey-title">Please enter your API details</h1>
+
+  <div class="homey-form-group">
+    <label class="homey-form-label" for="userId">Enphase user ID</label>
+    <input
+      class="homey-form-input"
+      type="text"
+      id="userId"
+      placeholder="4d6a51330a"
+      value=""
+    />
+
+    <label class="homey-form-label" for="apiKey">Enphase API key</label>
+    <input
+      class="homey-form-input"
+      type="text"
+      pattern="[0-9a-z]{32}"
+      id="apiKey"
+      placeholder="c97c452323a8ff46d9d016bea871e05b"
+      value=""
+    />
+  </div>
+
+  <button
+    class="homey-button-primary-full homey-solarpanels-submit-button"
+    type="submit"
+  >
+    Connect
+  </button>
+</form>
+
+<script type="application/javascript">
+  const onConnect = async (event) => {
+    event.preventDefault(); // Prevent the form from submitting and refreshing the page
+
+    Homey.showLoadingOverlay();
+
+    const apiKey = document.getElementById("apiKey").value;
+    const userId = document.getElementById("userId").value;
+
+    Homey.emit("validate", { userId, apiKey })
+      .then(() => {
+        Homey.showView("list_devices");
+      })
+      .catch((error) => {
+        Homey.hideLoadingOverlay();
+        Homey.alert(error.message);
+      });
+  };
+</script>
+>>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7

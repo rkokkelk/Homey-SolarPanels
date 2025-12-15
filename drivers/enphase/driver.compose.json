@@ -1,10 +1,24 @@
 {
   "name": {
+<<<<<<< HEAD
     "en": "Enphase Enlighten",
     "nl": "Enphase Enlighten"
   },
   "connectivity": ["cloud"],
   "platforms": ["local"],
+=======
+    "en": "Enphase Enlighten"
+  },
+  "class": "solarpanel",
+  "capabilities": ["measure_power", "meter_power"],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.jpg",
+    "small": "{{driverAssetsPath}}/images/small.jpg"
+  },
+  "deprecated": true,
+  "connectivity": ["cloud"],
+  "platforms": ["local", "cloud"],
+>>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7
   "pair": [
     {
       "id": "pair"
@@ -20,6 +34,7 @@
       "id": "add_devices",
       "template": "add_devices"
     }
+<<<<<<< HEAD
   ],
   "images": {
     "large": "./drivers/enphase/assets/images/large.jpg",
@@ -47,3 +62,7 @@
     }
   ]
 }
+=======
+  ]
+}
+>>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7

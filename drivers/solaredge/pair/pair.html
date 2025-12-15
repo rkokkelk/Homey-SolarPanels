@@ -1,4 +1,5 @@
 <style type="text/css">
+<<<<<<< HEAD
 	.input-field {
 		margin-top: 10px;
 	}
@@ -39,3 +40,89 @@
 		});
 	});
 </script>
+=======
+  .homey-solarpanels-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .homey-solarpanels-submit-button {
+    margin-top: auto;
+  }
+
+  .homey-solarpanels-help {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+
+    padding: .5em;
+    border-radius: var(--homey-border-radius-small);
+
+    background-color: #e79500;
+    color: #ffffff;
+  }
+
+  .homey-solarpanels-help > svg {
+    width: 1.5em;
+    height: 1.5em;
+    fill: #ffffff;
+    flex: 1 0 auto;
+  }
+</style>
+
+<form class="homey-form homey-solarpanels-form" onsubmit="onConnect(event)">
+  <h1 class="homey-title">Please enter your API key</h1>
+
+  <div class="homey-form-group">
+    <label class="homey-form-label" for="apiKey">SolarEdge API key</label>
+    <input
+      class="homey-form-input"
+      type="text"
+      pattern="[0-9a-zA-Z]{32}"
+      id="apiKey"
+      placeholder="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      value=""
+    />
+  </div>
+
+  <p class="homey-solarpanels-help">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        fill-rule="evenodd"
+        d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+        clip-rule="evenodd"
+      />
+    </svg>
+
+    If you request an API key from your installer, make sure to tell them to press 'save' after generating the API key!
+  </p>
+
+  <button
+    class="homey-button-primary-full homey-solarpanels-submit-button"
+    type="submit"
+  >
+    Connect
+  </button>
+</form>
+
+<script type="application/javascript">
+  const onConnect = async (event) => {
+    event.preventDefault(); // Prevent the form from submitting and refreshing the page
+
+    Homey.showLoadingOverlay();
+
+    const apiKeyInput = document.getElementById("apiKey");
+    const apiKey = apiKeyInput.value;
+
+    Homey.emit("validate", { apiKey })
+      .then(() => {
+        Homey.showView("list_devices");
+      })
+      .catch((error) => {
+        Homey.hideLoadingOverlay();
+        Homey.alert(error.message);
+      });
+  };
+</script>
+>>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7

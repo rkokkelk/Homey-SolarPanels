@@ -1,15 +1,24 @@
 {
-  "name": "homey-solarpanels",
-  "version": "4.0.9",
-  "main": "app.js",
+  "name": "it.diederik.solar",
+  "version": "5.0.0",
+  "main": "app.ts",
+  "engines": {
+    "node": "16"
+  },
+  "scripts": {
+    "homey-validate": "homey app validate --level verified",
+    "homey-build": "homey app build",
+    "build": "tsc"
+  },
   "dependencies": {
-    "md5": "^2.2.1",
-    "modbus-serial": "^8.0.1",
-    "node-fetch": "^2.6.1",
-    "uuid": "^3.4.0",
-    "xml2js": "^0.4.23"
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "homey": "^2.9.0"
+    "@tsconfig/node16": "^16.1.1",
+    "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.4",
+    "@types/node": "^20.5.6",
+    "@types/node-fetch": "2",
+    "homey": "^3.0.5",
+    "typescript": "^5.2.2"
   }
 }

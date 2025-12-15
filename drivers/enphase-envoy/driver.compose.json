@@ -1,8 +1,21 @@
 {
   "name": {
+<<<<<<< HEAD
     "en": "Enphase Envoy",
     "nl": "Enphase Envoy"
   },
+=======
+    "en": "Enphase Envoy"
+  },
+  "class": "solarpanel",
+  "capabilities": [
+    "measure_power",
+    "measure_power.consumption",
+    "meter_power",
+    "meter_power.consumption"
+  ],
+  "deprecated": true,
+>>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7
   "connectivity": ["lan"],
   "platforms": ["local"],
   "discovery": "enphase-envoy",
@@ -20,6 +33,7 @@
     }
   ],
   "images": {
+<<<<<<< HEAD
     "large": "./drivers/enphase/assets/images/large.jpg",
     "small": "./drivers/enphase/assets/images/small.jpg"
   },
@@ -31,3 +45,35 @@
     "daily_consumption"
   ]
 }
+=======
+    "small": "{{driverAssetsPath}}/images/small.jpg",
+    "large": "{{driverAssetsPath}}/images/large.jpg"
+  },
+  "capabilitiesOptions": {
+    "meter_power": {
+      "title": {
+        "en": "Energy yield (today)",
+        "nl": "Energieproductie (vandaag)"
+      }
+    },
+    "meter_power.consumption": {
+      "title": {
+        "en": "Energy usage (today)",
+        "nl": "Energieverbruik (vandaag)"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power (production)",
+        "nl": "Vermogen (productie)"
+      }
+    },
+    "measure_power.consumption": {
+      "title": {
+        "en": "Power (consumption)",
+        "nl": "Vermogen (gebruik)"
+      }
+    }
+  }
+}
+>>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7

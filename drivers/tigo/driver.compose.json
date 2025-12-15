@@ -1,5 +1,6 @@
 {
   "name": {
+<<<<<<< HEAD
     "en": "Tigo",
     "nl": "Tigo"
   },
@@ -36,3 +37,36 @@
     }
   ]
 }
+=======
+    "en": "Tigo"
+  },
+  "connectivity": ["cloud"],
+  "platforms": ["local", "cloud"],
+  "class": "solarpanel",
+  "capabilities": ["measure_power", "meter_power"],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.jpg",
+    "large": "{{driverAssetsPath}}/images/large.jpg"
+  },
+  "pair": [
+    {
+      "id": "login_credentials",
+      "template": "login_credentials",
+      "options": {
+        "logo": "pair.svg"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}
+>>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7
