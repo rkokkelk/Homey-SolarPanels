@@ -1,17 +1,17 @@
 import { Inverter } from "../../inverter";
-import { apsystems } from 'apsystems';
+import { ECUR } from 'apsystems';
 import { DeviceSettings, EcurData } from "./types";
 
 class APsystemsECUR extends Inverter {
     interval = 2;
 
-    async checkProduction(): Promise<void>  {
+    async checkProduction(): Promise<void> {
         this.homey.log("Checking production");
 
         const self = this;
         const settings: DeviceSettings = await this.getSettings();
 
-        const ecur = new apsystems.ECUR(settings.ip, 8899);
+        const ecur = new ECUR(settings.ip, 8899);
         ecur.getECUdata(async (error: Error, result: EcurData) => {
 
             // Handle error
