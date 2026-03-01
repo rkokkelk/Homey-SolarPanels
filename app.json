@@ -54,9 +54,6 @@
       {
         "name": "Dries Hooghe",
         "email": "dries@drieshooghe.com"
-      },
-      {
-    "name": "Roy K"
       }
     ]
   },
@@ -80,19 +77,22 @@
         "en": "APsystems ECU-R",
         "nl": "APsystems ECU-R"
       },
-      "pair": [
-        {
-          "id": "pair"
-        }
-      ],
-      "images": {
-        "large": "./drivers/apsystems/assets/images/large.jpg",
-        "small": "./drivers/apsystems/assets/images/small.jpg"
-      },
       "class": "solarpanel",
       "capabilities": [
         "measure_power",
         "meter_power"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "large": "/drivers/apsystems/assets/images/large.jpg",
+        "small": "/drivers/apsystems/assets/images/small.jpg"
+      },
+      "pair": [
+        {
+          "id": "pair"
+        }
       ],
       "settings": [
         {
@@ -110,13 +110,11 @@
         "en": "Enphase Enlighten",
         "nl": "Enphase Enlighten"
       },
-      "deprecated": true,
       "connectivity": [
         "cloud"
       ],
       "platforms": [
-        "local",
-        "cloud"
+        "local"
       ],
       "pair": [
         {
@@ -134,7 +132,15 @@
           "template": "add_devices"
         }
       ],
-      "id": "enphase",
+      "images": {
+        "large": "./drivers/enphase/assets/images/large.jpg",
+        "small": "./drivers/enphase/assets/images/small.jpg"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power"
+      ],
       "settings": [
         {
           "type": "group",
@@ -176,20 +182,14 @@
             "nl": "minuten"
           }
         }
-      ]
+      ],
+      "id": "enphase"
     },
     {
       "name": {
-        "en": "Enphase Envoy"
+        "en": "Enphase Envoy",
+        "nl": "Enphase Envoy"
       },
-      "class": "solarpanel",
-      "capabilities": [
-        "measure_power",
-        "measure_power.consumption",
-        "meter_power",
-        "meter_power.consumption"
-      ],
-      "deprecated": true,
       "connectivity": [
         "lan"
       ],
@@ -211,35 +211,16 @@
         }
       ],
       "images": {
-        "small": "/drivers/enphase-envoy/assets/images/small.jpg",
-        "large": "/drivers/enphase-envoy/assets/images/large.jpg"
+        "large": "./drivers/enphase/assets/images/large.jpg",
+        "small": "./drivers/enphase/assets/images/small.jpg"
       },
-      "capabilitiesOptions": {
-        "meter_power": {
-          "title": {
-            "en": "Energy yield (today)",
-            "nl": "Energieproductie (vandaag)"
-          }
-        },
-        "meter_power.consumption": {
-          "title": {
-            "en": "Energy usage (today)",
-            "nl": "Energieverbruik (vandaag)"
-          }
-        },
-        "measure_power": {
-          "title": {
-            "en": "Power (production)",
-            "nl": "Vermogen (productie)"
-          }
-        },
-        "measure_power.consumption": {
-          "title": {
-            "en": "Power (consumption)",
-            "nl": "Vermogen (gebruik)"
-          }
-        }
-      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "consumption",
+        "meter_power",
+        "daily_consumption"
+      ],
       "id": "enphase-envoy"
     },
     {
@@ -338,24 +319,89 @@
     },
     {
       "name": {
-        "en": "Growatt"
+        "en": "Fronius",
+        "nl": "Fronius"
       },
       "connectivity": [
-        "cloud"
+        "lan"
       ],
       "platforms": [
-        "local",
-        "cloud"
+        "local"
       ],
+      "deprecated": true,
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "images": {
+        "large": "./drivers/fronius/assets/images/large.jpg",
+        "small": "./drivers/fronius/assets/images/small.jpg"
+      },
       "class": "solarpanel",
       "capabilities": [
         "measure_power",
         "meter_power"
       ],
-      "images": {
-        "small": "/drivers/growatt/assets/images/small.jpg",
-        "large": "/drivers/growatt/assets/images/large.jpg"
+      "settings": [
+        {
+          "id": "ip",
+          "type": "text",
+          "label": {
+            "en": "Fronius Datamanager IP address"
+          }
+        }
+      ],
+      "id": "fronius"
+    },
+    {
+      "name": {
+        "en": "Ginlong",
+        "nl": "Ginlong"
       },
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "images": {
+        "large": "./drivers/ginlong/assets/images/large.jpg",
+        "small": "./drivers/ginlong/assets/images/small.jpg"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power"
+      ],
+      "id": "ginlong"
+    },
+    {
+      "name": {
+        "en": "GoodWe SEMS"
+      },
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local"
+      ],
       "pair": [
         {
           "id": "login_credentials",
@@ -376,7 +422,73 @@
           "template": "add_devices"
         }
       ],
-      "id": "growatt",
+      "images": {
+        "large": "./drivers/goodwe/assets/images/large.jpg",
+        "small": "./drivers/goodwe/assets/images/small.jpg"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power"
+      ],
+      "settings": [
+        {
+          "id": "username",
+          "type": "text",
+          "label": {
+            "en": "GoodWe SEMS username"
+          }
+        },
+        {
+          "id": "password",
+          "type": "password",
+          "label": {
+            "en": "GoodWe SEMS password"
+          }
+        }
+      ],
+      "id": "goodwe"
+    },
+    {
+      "name": {
+        "en": "Growatt",
+        "nl": "Growatt"
+      },
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "pair.svg"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "images": {
+        "large": "./drivers/growatt/assets/images/large.jpg",
+        "small": "./drivers/growatt/assets/images/small.jpg"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power"
+      ],
       "settings": [
         {
           "type": "group",
@@ -400,31 +512,107 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "growatt"
     },
     {
       "name": {
-        "en": "PVOutput"
+        "en": "Huawei",
+        "nl": "Huawei"
+      },
+      "connectivity": [
+        "lan"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "images": {
+        "large": "./drivers/huawei/assets/images/large.png",
+        "small": "./drivers/huawei/assets/images/small.png"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_temperature"
+      ],
+      "settings": [
+        {
+          "id": "ip",
+          "type": "text",
+          "label": {
+            "en": "Huawei inverter IP address"
+          }
+        }
+      ],
+      "id": "huawei"
+    },
+    {
+      "name": {
+        "en": "Kostal"
+      },
+      "connectivity": [
+        "lan"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "images": {
+        "large": "./drivers/kostal/assets/images/large.jpg",
+        "small": "./drivers/kostal/assets/images/small.jpg"
       },
       "class": "solarpanel",
       "capabilities": [
         "measure_power",
         "meter_power"
       ],
-      "images": {
-        "small": "/drivers/pvoutput/assets/images/small.jpg",
-        "large": "/drivers/pvoutput/assets/images/large.jpg"
+      "settings": [
+        {
+          "id": "ipAddress",
+          "type": "text",
+          "label": {
+            "en": "Inverter IP address"
+          }
+        },
+        {
+          "id": "password",
+          "type": "text",
+          "label": {
+            "en": "Inverter password"
+          }
+        }
+      ],
+      "id": "kostal"
+    },
+    {
+      "name": {
+        "en": "Omnik"
       },
       "connectivity": [
         "cloud"
       ],
       "platforms": [
-        "local",
-        "cloud"
+        "local"
       ],
+      "deprecated": true,
       "pair": [
         {
-          "id": "pair"
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "pair.svg"
+          }
         },
         {
           "id": "list_devices",
@@ -438,33 +626,96 @@
           "template": "add_devices"
         }
       ],
-      "capabilitiesOptions": {
-        "meter_power": {
-          "title": {
-            "en": "Energy yield (today)",
-            "nl": "Energieproductie (vandaag)"
+      "images": {
+        "large": "./drivers/omnik/assets/images/large.jpg",
+        "small": "./drivers/omnik/assets/images/small.jpg"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power"
+      ],
+      "settings": [
+        {
+          "id": "username",
+          "type": "text",
+          "label": {
+            "en": "Omnik username"
           }
         },
-        "meter_power.consumption": {
-          "title": {
-            "en": "Energy usage (today)",
-            "nl": "Energieverbruik (vandaag)"
-          }
-        },
-        "measure_power": {
-          "title": {
-            "en": "Power (production)",
-            "nl": "Vermogen (productie)"
-          }
-        },
-        "measure_power.consumption": {
-          "title": {
-            "en": "Power (consumption)",
-            "nl": "Vermogen (gebruik)"
+        {
+          "id": "password",
+          "type": "password",
+          "label": {
+            "en": "Omnik password"
           }
         }
+      ],
+      "id": "omnik"
+    },
+    {
+      "name": {
+        "en": "Omnik",
+        "nl": "Omnik"
       },
-      "id": "pvoutput",
+      "connectivity": [
+        "lan"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "images": {
+        "large": "./drivers/omnik-local/assets/images/large.jpg",
+        "small": "./drivers/omnik-local/assets/images/small.jpg"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_temperature"
+      ],
+      "settings": [
+        {
+          "id": "ip",
+          "type": "text",
+          "label": {
+            "en": "Omnik inverter IP address"
+          }
+        }
+      ],
+      "id": "omnik-local"
+    },
+    {
+      "name": {
+        "en": "PVOutput",
+        "nl": "PVOutput"
+      },
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "images": {
+        "large": "./drivers/pvoutput/assets/images/large.jpg",
+        "small": "./drivers/pvoutput/assets/images/small.jpg"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power"
+      ],
       "settings": [
         {
           "type": "group",
@@ -570,13 +821,92 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "pvoutput"
+    },
+    {
+      "name": {
+        "en": "SAJ (LAN)"
+      },
+      "connectivity": [
+        "lan"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "images": {
+        "large": "./drivers/saj/assets/images/large.jpg",
+        "small": "./drivers/saj/assets/images/small.jpg"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power"
+      ],
+      "settings": [
+        {
+          "id": "ip",
+          "type": "text",
+          "label": {
+            "en": "SAJ IP address"
+          }
+        }
+      ],
+      "id": "saj"
+    },
+    {
+      "name": {
+        "en": "SAJ (eSolar WiFi)",
+        "nl": "SAJ (eSolar WiFi)"
+      },
+      "connectivity": [
+        "lan"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "images": {
+        "large": "./drivers/saj-esolar/assets/images/large.jpg",
+        "small": "./drivers/saj-esolar/assets/images/small.jpg"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_temperature"
+      ],
+      "settings": [
+        {
+          "id": "ip",
+          "type": "text",
+          "label": {
+            "en": "eSolar WiFi D Module IP address"
+          }
+        }
+      ],
+      "id": "saj-esolar"
     },
     {
       "name": {
         "en": "SolarEdge",
         "nl": "SolarEdge"
       },
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local"
+      ],
       "pair": [
         {
           "id": "pair"
@@ -594,22 +924,14 @@
         }
       ],
       "images": {
-        "large": "/drivers/solaredge/assets/images/large.jpg",
-        "small": "/drivers/solaredge/assets/images/small.jpg"
+        "large": "./drivers/solaredge/assets/images/large.jpg",
+        "small": "./drivers/solaredge/assets/images/small.jpg"
       },
-      "connectivity": [
-        "cloud"
-      ],
-      "platforms": [
-        "local",
-        "cloud"
-      ],
       "class": "solarpanel",
       "capabilities": [
         "measure_power",
         "meter_power",
-        "measure_temperature",
-        "meter_power.total"
+        "measure_temperature"
       ],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -617,51 +939,8 @@
             "en": "Inverter temperature",
             "nl": "Temperatuur omvormer"
           }
-        },
-        "meter_power": {
-          "title": {
-            "en": "Energy yield (today)",
-            "nl": "Energieproductie (vandaag)"
-          }
-        },
-        "meter_power.consumption": {
-          "title": {
-            "en": "Energy usage (today)",
-            "nl": "Energieverbruik (vandaag)"
-          }
-        },
-        "meter_power.total": {
-          "title": {
-            "en": "Energy yield (total)",
-            "nl": "Energieproductie (totaal)"
-          }
-        },
-        "measure_power": {
-          "title": {
-            "en": "Power (production)",
-            "nl": "Vermogen (productie)"
-          }
-        },
-        "measure_voltage.ac": {
-          "title": {
-            "en": "Voltage (AC side)",
-            "nl": "Spanning (AC-zijde)"
-          }
-        },
-        "measure_voltage.dc": {
-          "title": {
-            "en": "Voltage (DC side)",
-            "nl": "Spanning (DC-zijde)"
-          }
-        },
-        "measure_power.consumption": {
-          "title": {
-            "en": "Power (consumption)",
-            "nl": "Vermogen (gebruik)"
-          }
         }
       },
-      "id": "solaredge",
       "settings": [
         {
           "id": "key",
@@ -688,35 +967,23 @@
             "nl": "minuten"
           }
         }
-      ]
+      ],
+      "id": "solaredge"
     },
     {
       "name": {
-        "en": "Tigo"
+        "en": "SolarMAN"
       },
       "connectivity": [
         "cloud"
       ],
       "platforms": [
-        "local",
-        "cloud"
+        "local"
       ],
-      "class": "solarpanel",
-      "capabilities": [
-        "measure_power",
-        "meter_power"
-      ],
-      "images": {
-        "small": "/drivers/tigo/assets/images/small.jpg",
-        "large": "/drivers/tigo/assets/images/large.jpg"
-      },
+      "deprecated": true,
       "pair": [
         {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "logo": "pair.svg"
-          }
+          "id": "pair"
         },
         {
           "id": "list_devices",
@@ -730,7 +997,93 @@
           "template": "add_devices"
         }
       ],
-      "id": "tigo",
+      "images": {
+        "large": "./drivers/solarman/assets/images/large.jpg",
+        "small": "./drivers/solarman/assets/images/small.jpg"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power"
+      ],
+      "settings": [
+        {
+          "id": "username",
+          "type": "text",
+          "label": {
+            "en": "SolarMAN username"
+          }
+        },
+        {
+          "id": "password",
+          "type": "password",
+          "label": {
+            "en": "SolarMAN password"
+          }
+        }
+      ],
+      "id": "solarman"
+    },
+    {
+      "name": {
+        "en": "Solax"
+      },
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "images": {
+        "large": "./drivers/solax/assets/images/large.jpg",
+        "small": "./drivers/solax/assets/images/small.jpg"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power"
+      ],
+      "settings": [
+        {
+          "id": "tokenId",
+          "type": "text",
+          "label": {
+            "en": "Solax API token ID"
+          }
+        }
+      ],
+      "id": "solax"
+    },
+    {
+      "name": {
+        "en": "Tigo",
+        "nl": "Tigo"
+      },
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "images": {
+        "large": "./drivers/tigo/assets/images/large.jpg",
+        "small": "./drivers/tigo/assets/images/small.jpg"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power"
+      ],
       "settings": [
         {
           "type": "group",
@@ -754,7 +1107,62 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "tigo"
+    },
+    {
+      "name": {
+        "en": "Trannergy"
+      },
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "deprecated": true,
+      "pair": [
+        {
+          "id": "pair"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "images": {
+        "large": "./drivers/trannergy/assets/images/large.png",
+        "small": "./drivers/trannergy/assets/images/small.png"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_power",
+        "meter_power"
+      ],
+      "settings": [
+        {
+          "id": "username",
+          "type": "text",
+          "label": {
+            "en": "Trannergy email"
+          }
+        },
+        {
+          "id": "password",
+          "type": "password",
+          "label": {
+            "en": "Trannergy password"
+          }
+        }
+      ],
+      "id": "trannergy"
     }
   ],
   "capabilities": {
@@ -771,6 +1179,90 @@
       "insights": true,
       "desc": {
         "en": "Battery SoC percentage"
+      },
+      "chartType": "stepLine",
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "consumption": {
+      "type": "number",
+      "title": {
+        "en": "Power consumption",
+        "nl": "Stroomverbruik"
+      },
+      "icon": "/assets/capabilities/consumption.svg",
+      "units": {
+        "en": "W"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Power in Watt (W)",
+        "nl": "Vermogen in Watt (W)"
+      },
+      "chartType": "stepLine",
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "daily_consumption": {
+      "type": "number",
+      "title": {
+        "en": "Energy consumption today",
+        "nl": "Stroomverbruik vandaag"
+      },
+      "icon": "/assets/capabilities/daily_consumption.svg",
+      "units": {
+        "en": "kWh"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Energy consumption today in kWh",
+        "nl": "Stroomverbruik vandaag in kWh"
+      },
+      "chartType": "stepLine",
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "daily_production": {
+      "type": "number",
+      "title": {
+        "en": "Energy generation today",
+        "nl": "Energieproductie vandaag"
+      },
+      "icon": "/assets/capabilities/daily_production.svg",
+      "units": {
+        "en": "kWh"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Energy generation today in kWh",
+        "nl": "Energieproductie vandaag in kWh"
+      },
+      "chartType": "stepLine",
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "production": {
+      "type": "number",
+      "title": {
+        "en": "Power production",
+        "nl": "Stroomproductie"
+      },
+      "icon": "/assets/capabilities/production.svg",
+      "units": {
+        "en": "W"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Power in Watt (W)",
+        "nl": "Vermogen in Watt (W)"
       },
       "chartType": "stepLine",
       "decimals": 2,

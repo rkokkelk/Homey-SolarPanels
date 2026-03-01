@@ -1,23 +1,14 @@
 {
   "name": {
-<<<<<<< HEAD
     "en": "Growatt",
     "nl": "Growatt"
   },
-  "connectivity": ["cloud"],
-  "platforms": ["local"],
-=======
-    "en": "Growatt"
-  },
-  "connectivity": ["cloud"],
-  "platforms": ["local", "cloud"],
-  "class": "solarpanel",
-  "capabilities": ["measure_power", "meter_power"],
-  "images": {
-    "small": "{{driverAssetsPath}}/images/small.jpg",
-    "large": "{{driverAssetsPath}}/images/large.jpg"
-  },
->>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7
+  "connectivity": [
+    "cloud"
+  ],
+  "platforms": [
+    "local"
+  ],
   "pair": [
     {
       "id": "login_credentials",
@@ -37,7 +28,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-<<<<<<< HEAD
   ],
   "images": {
     "large": "./drivers/growatt/assets/images/large.jpg",
@@ -76,7 +66,3 @@
     }
   ]
 }
-=======
-  ]
-}
->>>>>>> 3b50ae378b0b091b3122a73c16112410dff12fd7
